@@ -62,7 +62,7 @@ public class StringInterpolationService : IStringInterpolationService
     {
         
         var day = _date.Now.ToString("dddd");
-        var answer = $"{day}";
+        var answer = $"{day,10}";
         Console.WriteLine(answer);
 
         return answer;
@@ -70,22 +70,45 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number06()
     {
-        throw new NotImplementedException();
+        var time = _date.Now.ToString("t");
+    
+        var day = _date.Now.ToString("dddd");
+        var answer = $"{time,10}{day,10}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     public string Number07()
     {
-        throw new NotImplementedException();
+        var hour = _date.Now.ToString("hh");
+        var min = _date.Now.ToString("mm");
+        var sec = _date.Now.ToString("ss");
+        var answer = $"h:{hour}, m:{min}, s:{sec}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     public string Number08()
     {
-        throw new NotImplementedException();
+        var year = _date.Now.ToString("yyyy");
+        var month = _date.Now.ToString("MM");
+        var day = _date.Now.ToString("dd");
+        var hour = _date.Now.ToString("hh");
+        var min = _date.Now.ToString("mm");
+        var sec = _date.Now.ToString("ss");
+        var answer = $"{year}.{month}.{day}.{hour}.{min}.{sec}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     public string Number09()
     {
         throw new NotImplementedException();
+
+
     }
 
     public string Number10()
