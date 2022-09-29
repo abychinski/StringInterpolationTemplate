@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.Extensions.Logging;
 using StringInterpolationTemplate.Utils;
 
@@ -28,22 +29,43 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number02()
     {
-        throw new NotImplementedException();
-    }
+        var date2 = _date.Now.ToString("yyyy.MM.dd");
+        var answer2 = $"{date2}";
+        Console.WriteLine(answer2);
+
+        return answer2;
+    }   
 
     public string Number03()
     {
-        throw new NotImplementedException();
+        var year = _date.Now.ToString("yyyy");
+        var month = _date.Now.ToString("MMMM");
+        var day = _date.Now.ToString("dd");
+        var answer = $"Day {day} of {month}, {year}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     public string Number04()
     {
-        throw new NotImplementedException();
+        var year = _date.Now.ToString("yyyy");
+        var month = _date.Now.ToString("MM");
+        var day = _date.Now.ToString("dd");
+        var answer = $"Year: {year}, Month: {month}, Day: {day}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     public string Number05()
     {
-        throw new NotImplementedException();
+        
+        var day = _date.Now.ToString("dddd");
+        var answer = $"{day}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     public string Number06()
