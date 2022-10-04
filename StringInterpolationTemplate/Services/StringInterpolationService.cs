@@ -7,6 +7,7 @@ namespace StringInterpolationTemplate.Services;
 
 public class StringInterpolationService : IStringInterpolationService
 {
+   
     private readonly ISystemDate _date;
     private readonly ILogger<IStringInterpolationService> _logger;
 
@@ -106,19 +107,33 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number09()
     {
-        throw new NotImplementedException();
+        var pi = Math.PI;
 
-
+        var answer = $"{pi:C}";
+        Console.WriteLine(answer);
+        return answer;
     }
 
     public string Number10()
     {
-        throw new NotImplementedException();
+        var pi = Math.PI;
+
+        var answer = $"{pi,10:n3}";
+        Console.WriteLine(answer);
+        return answer;
     }
 
     public string Number11()
     {
-        throw new NotImplementedException();
+        var year = _date.Now.ToString("yyyy");
+        var month = _date.Now.ToString("MMMM");
+        var day = _date.Now.ToString("dddd");
+        var day2 = _date.Now.ToString("dd");
+       
+        var answer = $"{day}, {month} {day2}, {year}";
+        Console.WriteLine(answer);
+
+        return answer;
     }
 
     //2.2019.01.22
